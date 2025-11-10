@@ -11,6 +11,7 @@ function App() {
     try {
       const res = await fetch("http://localhost:5000/api/destinations");
       const data = await res.json();
+      console.log("Fetched data:", data);
       setDestinations(data);
     } catch (error) {
       console.error("Error fetching destinations:", error);
