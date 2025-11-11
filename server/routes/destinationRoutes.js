@@ -3,7 +3,6 @@ import Destination from "../models/Destination.js";
 
 const router = express.Router();
 
-// Get all destinations
 router.get("/", async (req, res) => {
   try {
     const destinations = await Destination.find();
@@ -13,7 +12,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Add a new destination
 router.post("/", async (req, res) => {
   try {
     const newDestination = new Destination(req.body);
