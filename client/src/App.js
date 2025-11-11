@@ -1,4 +1,23 @@
 import { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
+  );
+}
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -6,7 +25,7 @@ function App() {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
-  // Fetch destinations from backend
+ 
   const fetchDestinations = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/destinations");
@@ -22,7 +41,7 @@ function App() {
     fetchDestinations();
   }, []);
 
-  // Handle form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title || !description) return alert("Please fill all fields!");
@@ -40,7 +59,7 @@ function App() {
         setTitle("");
         setDescription("");
         setImage("");
-        fetchDestinations(); // refresh list
+        fetchDestinations(); 
       } else {
         console.error("Failed to add destination");
       }
