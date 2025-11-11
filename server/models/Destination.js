@@ -2,12 +2,14 @@ import mongoose from "mongoose";
 
 const destinationSchema = new mongoose.Schema({
   title: { type: String, required: true },
+  state: { type: String },
   country: { type: String, default: "India" },
   description: { type: String, required: true },
-  image: { type: String },
+  images: [String],           
   tags: [String],
+  bestTimeToVisit: { type: String },
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  createdAt: { type: Date, default: Date.now }
 });
 
-const Destination = mongoose.model("Destination", destinationSchema);
-
-export default Destination;
+export default mongoose.model("Destination", destinationSchema);
