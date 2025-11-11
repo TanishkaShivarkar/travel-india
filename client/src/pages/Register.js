@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import React from "react";
+
+const Register = () => {
+  return <h2 style={{ textAlign: "center", marginTop: "50px" }}>Register Page</h2>;
+};
+;
 
 export default function Register() {
   const [name,setName]=useState(""); const [email,setEmail]=useState(""); const [password,setPassword]=useState("");
@@ -28,3 +34,5 @@ export default function Register() {
     </form>
   );
 }
+
+
