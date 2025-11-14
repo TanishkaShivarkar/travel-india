@@ -1,42 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav style={styles.navbar}>
-      <h2 style={styles.logo}>Travel India</h2>
-      <div style={styles.links}>
-        <Link to="/" style={styles.link}>Home</Link>
-        <Link to="/destinations" style={styles.link}>Destinations</Link>
-        <Link to="/about" style={styles.link}>About</Link>
-        <Link to="/login" style={styles.link}>Login</Link>
-      </div>
+    <nav className="navbar">
+      <div className="logo">Travel India 🌏</div>
+
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/destinations">Destinations</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/login">Login</Link></li>
+      </ul>
     </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "15px 40px",
-    backgroundColor: "#2196f3",
-    color: "white",
-  },
-  logo: {
-    margin: 0,
-  },
-  links: {
-    display: "flex",
-    gap: "20px",
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
-    fontWeight: "bold",
-  },
-};
-
-export default Navbar;
-
+}
