@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import "./Destinations.css";
 
-export default function Destinations() {
+const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
+  // Fetch data from backend
   const fetchDestinations = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/destinations");
@@ -20,10 +22,10 @@ export default function Destinations() {
     fetchDestinations();
   }, []);
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!title || !description) return alert("Please fill all fields!");
+    if (!title || !description) return alert("Fill all fields!");
 
     const newDestination = { title, description, image };
 
@@ -46,54 +48,52 @@ export default function Destinations() {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h1>🧭 Destinations</h1>
-      <p>Add or explore beautiful Indian places 🌏</p>
+    <div className="dest-container">
+      
+      <h1 className="dest-title">Top Destinations in India 🌍</h1>
+      <p className="dest-subtitle">Add & explore the best travel spots!</p>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: "2rem" }}>
+      <form className="dest-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Destination Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          style={{ padding: "0.5rem", margin: "0.5rem" }}
         />
+
         <input
           type="text"
-          placeholder="Description"
+          placeholder="Short Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          style={{ padding: "0.5rem", margin: "0.5rem" }}
         />
+
         <input
           type="text"
           placeholder="Image URL (optional)"
           value={image}
           onChange={(e) => setImage(e.target.value)}
-          style={{ padding: "0.5rem", margin: "0.5rem" }}
         />
 
-        <button type="submit" style={{ padding: "0.5rem 1rem" }}>
-          Add Destination
-        </button>
+        <button type="submit">Add Destination</button>
       </form>
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {destinations.map((d) => (
-          <li key={d._id} style={{ margin: "2rem 0" }}>
-            <h2>{d.title}</h2>
-            <p>{d.description}</p>
+      <div className="dest-grid">
+        {destinations.length === 0 ? (
+          <p className="no-data">No destinations yet. Add one!</p>
+        ) : (
+          destinations.map((d) => (
+            <div className="dest-card" key={d._id}>
+              <img src={d.image || "https://via.placeholder.com/300"} alt={d.title} />
+              <h3>{d.title}</h3>
+              <p>{d.description}</p>
+            </div>
+          ))
+        )}
+      </div>
 
-            {d.image && (
-              <img
-                src={d.image}
-                alt={d.title}
-                style={{ width: "300px", borderRadius: "10px" }}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
     </div>
   );
-}
+};
+
+export default Destinations;
