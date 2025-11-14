@@ -6,9 +6,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const nav = useNavigate();
 
-  const submit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -16,42 +15,112 @@ export default function Login() {
     });
 
     const data = await res.json();
-
     if (res.ok) {
       localStorage.setItem("token", data.token);
       alert("Login successful!");
       nav("/");
     } else {
-      alert(data.msg || "Invalid credentials");
+      alert(data.msg || "Invalid email or password");
     }
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login Page</h2>
-      <form
-        onSubmit={submit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "10px",
-          marginTop: "20px",
-        }}
-      >
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-        />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          type="password"
-        />
-        <button type="submit">Login</button>
-      </form>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.title}>Welcome Back 👋</h2>
+        <p style={styles.subtitle}>Login to continue your journey</p>
+
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={styles.input}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.input}
+            required
+          />
+          <button type="submit" style={styles.button}>
+            Login
+          </button>
+        </form>
+
+        <p style={styles.footerText}>
+          Don’t have an account?{" "}
+          <span
+            style={styles.link}
+            onClick={() => nav("/register")}
+          >
+            Register
+          </span>
+        </p>
+      </div>
     </div>
   );
 }
+
+
+const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    background: "whiteSmoke",
+  },
+  card: {
+    background: "#F4F8D3",
+    padding: "2rem",
+    borderRadius: "15px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+    width: "100%",
+    maxWidth: "400px",
+    textAlign: "center",
+  },
+  title: {
+    marginBottom: "0.5rem",
+    color: "#333",
+  },
+  subtitle: {
+    color: "#666",
+    marginBottom: "2rem",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  input: {
+    padding: "0.8rem",
+    margin: "0.5rem 0",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    outline: "none",
+    fontSize: "1rem",
+  },
+  button: {
+    background: "#5563DE",
+    color: "white",
+    border: "none",
+    padding: "0.8rem",
+    borderRadius: "8px",
+    cursor: "pointer",
+    marginTop: "1rem",
+    fontSize: "1rem",
+  },
+  footerText: {
+    marginTop: "1rem",
+    color: "#333",
+  },
+  link: {
+    color: "#5563DE",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
+};
