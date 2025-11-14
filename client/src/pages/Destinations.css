@@ -1,0 +1,82 @@
+.dest-container {
+  text-align: center;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+    background: #F7CFD8;
+}
+
+.dest-title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: #ff5e62;
+}
+
+.dest-subtitle {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+
+.dest-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.dest-form input {
+  padding: 10px 15px;
+  width: 250px;
+  border: 2px solid #ff5e62;
+  border-radius: 8px;
+  outline: none;
+}
+
+.dest-form button {
+  padding: 10px 25px;
+  background: #ff5e62;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dest-form button:hover {
+  background: #ff385f;
+  transform: scale(1.05);
+}
+
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+
+}
+
+.dest-card {
+  background-color:#F4F8D3;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.4s;
+}
+
+.dest-card:hover {
+  transform: translateY(-8px);
+}
+
+.dest-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.no-data {
+  margin-top: 20px;
+  color: #777;
+}
