@@ -10,7 +10,7 @@ const AboutUs = () => {
     {
       icon: <FaMapMarkedAlt size={40} color="#2196f3" />,
       title: "Tour Guides",
-      description: "Get expert guides for exploring Indian tourist places."
+      description: "Get expein t guides for exploring Indian tourist places."
     },
     {
       icon: <FaBusAlt size={40} color="#4caf50" />,
@@ -25,7 +25,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div style={{ padding: "40px", textAlign: "center" }}>
+    <div style={{ padding: "40px",background: "#F7CFD8",  textAlign: "center" }}>
       <h1 style={{ fontSize: "36px", marginBottom: "20px" }}>About Travel India</h1>
       <p style={{ maxWidth: "700px", margin: "0 auto", fontSize: "18px", color: "#555" }}>
         Travel India helps you explore the most beautiful places across India.
@@ -41,12 +41,13 @@ const AboutUs = () => {
       }}>
         {services.map((service, index) => (
           <div key={index} style={{
-            background: "#fff",
-            padding: "25px",
-            borderRadius: "12px",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-            textAlign: "center"
-          }}>
+              background: "#F4F8D3",
+             padding: "25px",
+             borderRadius: "12px",
+           boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+             textAlign: "center"
+                }}>
+
             {service.icon}
             <h3 style={{ marginTop: "15px" }}>{service.title}</h3>
             <p style={{ color: "#666", fontSize: "15px", marginTop: "8px" }}>
