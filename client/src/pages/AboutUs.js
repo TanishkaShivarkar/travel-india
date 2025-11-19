@@ -44,6 +44,7 @@ const AboutUs = () => {
         {services.map((service, index) => (
           <div key={index} style={{
               background: "#F4F8D3",
+               border: "3px solid red",
              padding: "25px",
              borderRadius: "12px",
            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
@@ -75,7 +76,8 @@ const AboutUs = () => {
   
   <div
     style={{
-      background: "white",
+      background: "#F4F8D3",
+      border: "3px solid red",
       padding: "20px",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
@@ -99,8 +101,8 @@ const AboutUs = () => {
 
   <div
     style={{
-      background: "white",
-      padding: "20px",
+       background: "#F4F8D3",
+      border: "3px solid red",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     }}
@@ -123,8 +125,8 @@ const AboutUs = () => {
 
   <div
     style={{
-      background: "white",
-      padding: "20px",
+      background: "#F4F8D3",
+      border: "3px solid red",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     }}
