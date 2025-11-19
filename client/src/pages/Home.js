@@ -57,9 +57,7 @@ const Home = () => {
       </section>
 
      
-      <footer className="footer fade-in">
-        <p>© 2025 Travel India — Made with ❤ using React</p>
-      </footer>
+      
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { FaHotel, FaMapMarkedAlt, FaBusAlt, FaHeadset } from "react-icons/fa";
+import Review from "../components/Review";
+
 
 const AboutUs = () => {
   const services = [
@@ -58,7 +60,8 @@ const AboutUs = () => {
         ))}
         
       </div>
-      {/* ⭐ Review Section */}
+  
+  <br></br>
 <h2 style={{ textAlign: "center", marginTop: "50px" }}>What People Say</h2>
 
 <div
@@ -69,7 +72,7 @@ const AboutUs = () => {
     marginTop: "30px",
   }}
 >
-  {/* Review 1 */}
+  
   <div
     style={{
       background: "white",
@@ -94,7 +97,6 @@ const AboutUs = () => {
     <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
   </div>
 
-  {/* Review 2 */}
   <div
     style={{
       background: "white",
@@ -109,7 +111,7 @@ const AboutUs = () => {
         alt="user"
         style={{ width: "50px", height: "50px", borderRadius: "50%" }}
       />
-      <h4>Rahul Verma</h4>
+      <h4>Aisha Khan</h4>
     </div>
 
     <p style={{ marginTop: "10px", fontStyle: "italic" }}>
@@ -119,7 +121,6 @@ const AboutUs = () => {
     <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
   </div>
 
-  {/* Review 3 */}
   <div
     style={{
       background: "white",
@@ -134,7 +135,7 @@ const AboutUs = () => {
         alt="user"
         style={{ width: "50px", height: "50px", borderRadius: "50%" }}
       />
-      <h4>Aisha Khan</h4>
+      <h4>Rahul Verma</h4>
     </div>
 
     <p style={{ marginTop: "10px", fontStyle: "italic" }}>
@@ -144,7 +145,7 @@ const AboutUs = () => {
     <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
   </div>
 </div>
-
+ <Review />
     </div>
 
     
@@ -153,3 +154,6 @@ const AboutUs = () => {
 
 
 export default AboutUs;
+  
+ 
+

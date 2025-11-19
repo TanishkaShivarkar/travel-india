@@ -2,7 +2,7 @@
   text-align: center;
   padding: 40px;
   font-family: "Poppins", sans-serif;
-    background: #F7CFD8;
+    background: #FFBDBD;
 }
 
 .dest-title {
@@ -58,7 +58,7 @@
 }
 
 .dest-card {
-  background-color:#F4F8D3;
+  background-color:#FCF9EA;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
