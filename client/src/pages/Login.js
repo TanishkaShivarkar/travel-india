@@ -73,10 +73,12 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    background: "whiteSmoke",
+    background: "#F7CFD8",
+
   },
   card: {
     background: "#F4F8D3",
+    border: "3px solid red",
     padding: "2rem",
     borderRadius: "15px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
