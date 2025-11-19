@@ -7,7 +7,7 @@ const Destinations = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
-  // Fetch data from backend
+
   const fetchDestinations = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/destinations");
