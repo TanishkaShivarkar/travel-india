@@ -54,10 +54,102 @@ const AboutUs = () => {
               {service.description}
             </p>
           </div>
+          
         ))}
+        
       </div>
+      {/* ⭐ Review Section */}
+<h2 style={{ textAlign: "center", marginTop: "50px" }}>What People Say</h2>
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "20px",
+    marginTop: "30px",
+  }}
+>
+  {/* Review 1 */}
+  <div
+    style={{
+      background: "white",
+      padding: "20px",
+      borderRadius: "15px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    }}
+  >
+    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <img
+        src="https://i.pravatar.cc/100?img=10"
+        alt="user"
+        style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+      />
+      <h4>Priya Sharma</h4>
     </div>
+
+    <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+      “Travel India helped me plan the perfect trip! Highly recommended.”
+    </p>
+
+    <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
+  </div>
+
+  {/* Review 2 */}
+  <div
+    style={{
+      background: "white",
+      padding: "20px",
+      borderRadius: "15px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    }}
+  >
+    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <img
+        src="https://i.pravatar.cc/100?img=32"
+        alt="user"
+        style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+      />
+      <h4>Rahul Verma</h4>
+    </div>
+
+    <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+      “Amazing service and very user-friendly website.”
+    </p>
+
+    <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
+  </div>
+
+  {/* Review 3 */}
+  <div
+    style={{
+      background: "white",
+      padding: "20px",
+      borderRadius: "15px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    }}
+  >
+    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <img
+        src="https://i.pravatar.cc/100?img=15"
+        alt="user"
+        style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+      />
+      <h4>Aisha Khan</h4>
+    </div>
+
+    <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+      “I explored new places easily. Loved the experience!”
+    </p>
+
+    <p style={{ marginTop: "10px", color: "#FFD700" }}>⭐⭐⭐⭐⭐</p>
+  </div>
+</div>
+
+    </div>
+
+    
   );
 };
+
 
 export default AboutUs;
