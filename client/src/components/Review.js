@@ -1,93 +1,68 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Review.css";
 
 export default function Review() {
-  const [reviews, setReviews] = useState([]);
   const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+  const [msg, setMsg] = useState("");
   const [rating, setRating] = useState(0);
+  const [reviews, setReviews] = useState([]);
 
-  const submitReview = (e) => {
+  const submit = (e) => {
     e.preventDefault();
+    if (!name || !msg || rating === 0) return alert("Fill all fields!");
 
-    if (!name.trim() || !message.trim() || rating === 0) {
-      alert("Please fill all fields!");
-      return;
-    }
-
-    const newReview = {
-      name,
-      message,
-      rating,
-      profile: `https://i.pravatar.cc/100?u=${name}`
-    };
-
-    setReviews([newReview, ...reviews]);
+    setReviews([{ name, msg, rating }, ...reviews]);
     setName("");
-    setMessage("");
+    setMsg("");
     setRating(0);
   };
 
   return (
-    <div className="review-page">
-      <h2 className="review-title">Write a Review <span className="star-emoji">⭐</span></h2>
+    <div className="review-container">
+      <div className="review-card">
+        <h2>Write a Review ⭐</h2>
 
-      <form className="review-card" onSubmit={submitReview}>
-        <input
-          className="input-name"
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <form onSubmit={submit}>
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <textarea
-          className="input-message"
-          placeholder="Write your review..."
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          rows="5"
-        />
+          <textarea
+            placeholder="Write your review..."
+            value={msg}
+            onChange={(e) => setMsg(e.target.value)}
+          ></textarea>
 
-        <div className="rating-row" aria-label="Rating">
           <div className="stars">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <button
+            {[1,2,3,4,5].map((s) => (
+              <span
                 key={s}
-                type="button"
-                className={`star-btn ${s <= rating ? "filled" : ""}`}
                 onClick={() => setRating(s)}
-                aria-label={`${s} star`}
+                className={s <= rating ? "active" : ""}
               >
                 ★
-              </button>
+              </span>
             ))}
           </div>
-        </div>
 
-        <button type="submit" className="submit-btn">
-          Submit Review
-        </button>
-      </form>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
 
-      <h2 className="review-title small">User Reviews</h2>
+      <h3 className="ur-title">User Reviews</h3>
 
-      <div className="reviews-grid">
-        {reviews.length === 0 && <p className="no-reviews">No reviews yet — be first!</p>}
-
-        {reviews.map((rev, idx) => (
-          <div className="review-card-small" key={idx}>
-            <div className="rev-header">
-              <img src={rev.profile} alt="profile" className="rev-avatar" />
-              <div>
-                <h4 className="rev-name">{rev.name}</h4>
-                <div className="rev-stars" aria-hidden>
-                  {"★".repeat(rev.rating)}{" "}
-                  <span className="rev-empty">{"☆".repeat(5 - rev.rating)}</span>
-                </div>
-              </div>
-            </div>
-            <p className="rev-message">{rev.message}</p>
+      <div className="review-list">
+        {reviews.length === 0 && <p>No reviews yet</p>}
+        {reviews.map((r, i) => (
+          <div className="review-item" key={i}>
+            <h4>{r.name}</h4>
+            <p className="stars-line">
+              {"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}
+            </p>
+            <p>{r.msg}</p>
           </div>
         ))}
       </div>

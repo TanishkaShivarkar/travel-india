@@ -106,8 +106,8 @@ const styles = {
     fontSize: "1rem",
   },
   button: {
-    background: "#fff",
-    color: "#A6B28B",
+    background: "#A6B28B",
+    color: "#fff",
     border: "none",
     padding: "0.8rem",
     borderRadius: "8px",
