@@ -73,12 +73,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    background: "#F7CFD8",
+    background: "#F9F6F3",
 
   },
   card: {
-    background: "#F4F8D3",
-    border: "3px solid red",
+    background: "#f9e0d2",
     padding: "2rem",
     borderRadius: "15px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
@@ -107,8 +106,8 @@ const styles = {
     fontSize: "1rem",
   },
   button: {
-    background: "#5563DE",
-    color: "white",
+    background: "#fff",
+    color: "#A6B28B",
     border: "none",
     padding: "0.8rem",
     borderRadius: "8px",
@@ -121,7 +120,7 @@ const styles = {
     color: "#333",
   },
   link: {
-    color: "#5563DE",
+    color: "#A6B28B",
     cursor: "pointer",
     fontWeight: "bold",
   },

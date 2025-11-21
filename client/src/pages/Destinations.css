@@ -2,7 +2,7 @@
   text-align: center;
   padding: 40px;
   font-family: "Poppins", sans-serif;
-    background:#F7CFD8;
+    background:#F9F6F3;
 }
 
 .dest-title {
@@ -27,15 +27,14 @@
 .dest-form input {
   padding: 10px 15px;
   width: 250px;
-  border: 2px solid #ff5e62;
   border-radius: 8px;
   outline: none;
 }
 
 .dest-form button {
   padding: 10px 25px;
-  background: #ff5e62;
-  color: white;
+  background: #fff;
+  color: #A6B28B;
   border: none;
   font-size: 1rem;
   border-radius: 8px;
@@ -44,8 +43,9 @@
 }
 
 .dest-form button:hover {
-  background: #ff385f;
+  background: #1C352D;
   transform: scale(1.05);
+  color: #fff;
 }
 
 

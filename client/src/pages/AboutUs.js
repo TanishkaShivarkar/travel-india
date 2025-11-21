@@ -27,7 +27,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div style={{ padding: "40px",background: "#F7CFD8",  textAlign: "center" }}>
+    <div style={{ padding: "40px",background: "#F9F6F3",  textAlign: "center" }}>
       <h1 style={{ fontSize: "36px", marginBottom: "20px" }}>About Travel India</h1>
       <p style={{ maxWidth: "700px", margin: "0 auto", fontSize: "18px", color: "#555" }}>
         Travel India helps you explore the most beautiful places across India.
@@ -43,8 +43,7 @@ const AboutUs = () => {
       }}>
         {services.map((service, index) => (
           <div key={index} style={{
-              background: "#F4F8D3",
-               border: "3px solid red",
+              background: "#f9e0d2",
              padding: "25px",
              borderRadius: "12px",
            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
@@ -76,9 +75,8 @@ const AboutUs = () => {
   
   <div
     style={{
-      background: "#F4F8D3",
-      border: "3px solid red",
-      padding: "20px",
+      background: "#f9e0d2",
+      ding: "20px",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     }}
@@ -101,8 +99,7 @@ const AboutUs = () => {
 
   <div
     style={{
-       background: "#F4F8D3",
-      border: "3px solid red",
+       background: "#f9e0d2",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     }}
@@ -125,8 +122,7 @@ const AboutUs = () => {
 
   <div
     style={{
-      background: "#F4F8D3",
-      border: "3px solid red",
+      background: "#f9e0d2",
       borderRadius: "15px",
       boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     }}
